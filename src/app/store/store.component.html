@@ -1,0 +1,14 @@
+<h1>Greengrocers</h1>
+<button (click)="filterItems('')">All</button>
+<button (click)="filterItems('vegetable')">Vegetables</button>
+<button (click)="filterItems('fruit')">Fruits</button>
+<button (click)="setSortField('price')">Sort by Price</button>
+<button (click)="setSortField('name')">Sort by Name</button>
+<ul class="item-list store--item-list">
+  <li *ngFor="let item of filteredItems">
+    <div class="store--item-icon">
+      <img [src]="'assets/icons/' + item.id + '.svg'" [alt]="item.name" />
+    </div>
+    <button (click)="addToCart(item)">Add to cart</button>
+  </li>
+</ul>
